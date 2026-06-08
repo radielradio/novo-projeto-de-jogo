@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cd3c4sr8qfy57"]
+
+[ext_resource type="Script" uid="uid://dvvj8g3qw64yi" path="res://scripts/menu.gd" id="1_ylpcl"]
+[ext_resource type="Texture2D" uid="uid://b0vs43auv3xaf" path="res://Assets Godot Runner/background.png" id="2_cx167"]
+[ext_resource type="FontFile" uid="uid://cwcq1qb8d3s30" path="res://Assets Godot Runner/PressStart2P-Regular.ttf" id="3_dolsu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4eug"]
+texture = ExtResource("2_cx167")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlksc"]
+bg_color = Color(0.19215687, 0.5764706, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 10
+shadow_color = Color(0.45860183, 0.45147657, 0.85941833, 1)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcwhg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.95686275, 0.101960786, 0.101960786, 0.99607843)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Menu" type="Control" unique_id=1804793850]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylpcl")
+
+[node name="Fundo" type="Panel" parent="." unique_id=1710415046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n4eug")
+
+[node name="Titulo" type="Label" parent="." unique_id=1968593516]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 160.0
+offset_right = 1138.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(0.8117647, 0.9843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.7137255, 0.09803922, 0.11764706, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("3_dolsu")
+theme_override_font_sizes/font_size = 93
+text = "   RADI 
+  RUNNER	"
+
+[node name="Botões" type="VBoxContainer" parent="." unique_id=343369398]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 419.0
+offset_right = 743.0
+offset_bottom = 527.0
+theme_override_constants/separation = 8
+
+[node name="Jogar" type="Button" parent="Botões" unique_id=284531348]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dolsu")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlksc")
+text = "Jogar😎"
+
+[node name="Sair" type="Button" parent="Botões" unique_id=125358554]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dolsu")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_hcwhg")
+text = "SAIR"
+
+[connection signal="pressed" from="Botões/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botões/Sair" to="." method="_on_sair_pressed"]
