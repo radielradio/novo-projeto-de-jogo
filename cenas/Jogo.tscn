@@ -38,6 +38,18 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("6_4budo")
 region = Rect2(240, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmk43"]
+atlas = ExtResource("6_4budo")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rb4f"]
+atlas = ExtResource("6_4budo")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy2lg"]
+atlas = ExtResource("6_4budo")
+region = Rect2(0, 96, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_53b4e"]
 animations = [{
 "frames": [{
@@ -62,6 +74,20 @@ animations = [{
 "loop": 1,
 "name": &"correr",
 "speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmk43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rb4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy2lg")
+}],
+"loop": 1,
+"name": &"pular",
+"speed": 5.0
 }]
 
 [node name="Jogo" type="Node2D" unique_id=201420371]
@@ -138,4 +164,3 @@ position = Vector2(109.00001, 560)
 scale = Vector2(2.3541667, 2.2083328)
 sprite_frames = SubResource("SpriteFrames_53b4e")
 animation = &"correr"
-frame_progress = 0.81380284
