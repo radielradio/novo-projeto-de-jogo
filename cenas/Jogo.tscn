@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bqp0hrxloie2a"]
 
-[ext_resource type="Script" uid="uid://ce3ne4xcy63av" path="res://cenas/jogo.gd" id="1_bs2oa"]
+[ext_resource type="Script" uid="uid://ce3ne4xcy63av" path="res://scripts/jogo.gd" id="1_bs2oa"]
 [ext_resource type="Texture2D" uid="uid://b0vs43auv3xaf" path="res://Assets Godot Runner/background.png" id="1_yn7rx"]
 [ext_resource type="Texture2D" uid="uid://cvilvpgfiwthw" path="res://Assets Godot Runner/foreground.png" id="2_m1msy"]
 [ext_resource type="Texture2D" uid="uid://drotnmhrvx2gg" path="res://Assets Godot Runner/middleground2.png" id="4_ex3y1"]
 [ext_resource type="Texture2D" uid="uid://dsvikmiwfschv" path="res://Assets Godot Runner/middleground1.png" id="5_3cynk"]
 [ext_resource type="Texture2D" uid="uid://brl14blirtfsw" path="res://Assets Godot Runner/player.png" id="6_4budo"]
-[ext_resource type="Script" uid="uid://cc04math047r8" path="res://cenas/jogador.gd" id="6_thifo"]
+[ext_resource type="Script" uid="uid://cc04math047r8" path="res://scripts/jogador.gd" id="6_thifo"]
+[ext_resource type="Script" uid="uid://dt3eih3d0ulru" path="res://scripts/gerador_obstaculos.gd" id="8_0b3n2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2oa"]
 size = Vector2(2387, 59)
@@ -71,7 +72,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_726eq")
 }],
-"loop": 1,
+"loop": true,
 "name": &"correr",
 "speed": 11.0
 }, {
@@ -85,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hy2lg")
 }],
-"loop": 1,
+"loop": true,
 "name": &"pular",
 "speed": 5.0
 }]
@@ -164,3 +165,6 @@ position = Vector2(109.00001, 560)
 scale = Vector2(2.3541667, 2.2083328)
 sprite_frames = SubResource("SpriteFrames_53b4e")
 animation = &"correr"
+
+[node name="GeradorObstaculos" type="Node2D" parent="." unique_id=737746345]
+script = ExtResource("8_0b3n2")
