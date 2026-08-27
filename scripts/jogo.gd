@@ -3,8 +3,12 @@ extends Node2D
 @export var velocidade: int
 func _ready() -> void:
 	velocidade = 300
-
+	
 func _process(delta: float) -> void:
+	
+	$Status/Vida.text = "Vidas: " + str(int($Jogador.vidas))
+	$Status/Pontos.text = "Pontos: " + str($Jogador.pontos)
+	
 	
 	$Fundo.position.x -= velocidade*delta*0.5
 	$Fundo2.position.x -= velocidade*delta*0.5

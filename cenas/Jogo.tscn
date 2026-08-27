@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://brl14blirtfsw" path="res://Assets Godot Runner/player.png" id="6_4budo"]
 [ext_resource type="Script" uid="uid://cc04math047r8" path="res://scripts/jogador.gd" id="6_thifo"]
 [ext_resource type="Script" uid="uid://dt3eih3d0ulru" path="res://scripts/gerador_obstaculos.gd" id="8_0b3n2"]
+[ext_resource type="Script" uid="uid://dj8orul72vtye" path="res://scripts/gerador_itens.gd" id="9_2yyff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2oa"]
 size = Vector2(2387, 59)
@@ -152,6 +153,24 @@ texture = ExtResource("5_3cynk")
 position = Vector2(1153.5, 602)
 shape = SubResource("RectangleShape2D_bs2oa")
 
+[node name="GeradorObstaculos" type="Node2D" parent="." unique_id=737746345]
+script = ExtResource("8_0b3n2")
+
+[node name="GeradorItens" type="Node2D" parent="." unique_id=1240468738]
+script = ExtResource("9_2yyff")
+
+[node name="Status" type="HBoxContainer" parent="." unique_id=1134942461]
+offset_left = 33.0
+offset_top = 24.0
+offset_right = 266.0
+offset_bottom = 64.0
+
+[node name="Vida" type="Label" parent="Status" unique_id=1227198837]
+layout_mode = 2
+
+[node name="Pontos" type="Label" parent="Status" unique_id=644007233]
+layout_mode = 2
+
 [node name="Jogador" type="CharacterBody2D" parent="." unique_id=337743899]
 script = ExtResource("6_thifo")
 
@@ -165,6 +184,4 @@ position = Vector2(109.00001, 560)
 scale = Vector2(2.3541667, 2.2083328)
 sprite_frames = SubResource("SpriteFrames_53b4e")
 animation = &"correr"
-
-[node name="GeradorObstaculos" type="Node2D" parent="." unique_id=737746345]
-script = ExtResource("8_0b3n2")
+frame_progress = 0.43020272

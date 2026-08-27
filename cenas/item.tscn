@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://f70e6ekiwlqy"]
+
+[ext_resource type="Script" uid="uid://bi4p317mtqum3" path="res://scripts/item.gd" id="1_io3oc"]
+[ext_resource type="Texture2D" uid="uid://c4oyr3kqkhbw0" path="res://Assets Godot Runner/enemies.png" id="2_106ap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvigx"]
+size = Vector2(61, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alhwc"]
+atlas = ExtResource("2_106ap")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cehf"]
+atlas = ExtResource("2_106ap")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_levnn"]
+atlas = ExtResource("2_106ap")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kg77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alhwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cehf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_levnn")
+}],
+"loop": true,
+"name": &"ItemVoando",
+"speed": 6.0
+}]
+
+[node name="Item" type="Area2D" unique_id=134013968]
+script = ExtResource("1_io3oc")
+
+[node name="CorpoItem" type="CollisionShape2D" parent="." unique_id=559906468]
+shape = SubResource("RectangleShape2D_rvigx")
+
+[node name="ImagemItem" type="AnimatedSprite2D" parent="." unique_id=575126291]
+scale = Vector2(3.1666667, 3.0416667)
+sprite_frames = SubResource("SpriteFrames_3kg77")
+animation = &"ItemVoando"
+frame_progress = 0.2879234
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
